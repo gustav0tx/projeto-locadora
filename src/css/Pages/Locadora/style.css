@@ -1,27 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
-body{
-    height: 100dvh;    
+
+body {
+    height: 100dvh;
     background: linear-gradient(158deg, #334FAC 14.17%, #1F2B53 90.14%);
     display: flex;
     flex-flow: column;
     overflow: hidden;
-    
+
 }
-.text{
+
+.text {
     font-family: 'Inter', sans-serif;
 }
-.nav-bar{
+
+.nav-bar {
     display: flex;
     justify-content: space-between;
     margin: 9px 9px;
-    
+
 }
-.menu-config{
+
+.menu-config {
     display: flex;
     background: none;
     border: none;
@@ -29,30 +33,45 @@ body{
     font-size: 24px;
     cursor: pointer;
 }
-.input-serch{
+
+.input-serch {
     border: none;
     border-radius: 15px;
     text-indent: 8px;
     width: 30%;
 }
-.user-config img{
+
+.user-config img {
     height: 30px;
     width: 100%;
     align-self: center;
 }
-.user-config{
+
+.user-config {
     background: none;
     border: none;
 }
-.container{
+
+.container {
     display: flex;
     flex-flow: column;
-    gap: 1.1pc;
+    gap: 1px;
     overflow-x: hidden;
     overflow-y: hidden;
     text-align: center;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    margin: 0 20px;
+    padding-bottom: 50px;
+    margin-top: 20px;
 }
-.movies{
+
+.box-line-movies {
+    height: 250px;
+}
+
+.movies {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -60,20 +79,88 @@ body{
     margin: 0 5px;
     padding: 0.75pc 1.25pc;
 }
-.text-category{
+
+.text-category {
     margin-bottom: 1px;
 }
-.poster img{
+
+.poster img {
     border: 3px solid black;
     border-radius: 10px;
     cursor: pointer;
     height: 180px;
     width: 115px;
 }
-.poster img:hover{
-    border: 3px solid #f00404;
+
+.poster img:hover {
     border-radius: 10px;
     cursor: pointer;
     height: 180px;
     width: 115px;
+    animation: slide 3s forwards, border-color 500ms forwards;
+}
+
+@keyframes slide {
+    from {
+        transform: scale(1, 1);
+    }
+
+    to {
+        transform: scale(1.2, 1.2);
+    }
+}
+
+@keyframes border-color {
+    from {
+        border: 3px solid black
+    }
+
+    to {
+        border: 3px solid red
+    }
+}
+
+.title-search {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-top: 1%;
+}
+
+.result {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 8px;
+    gap: 5px
+}
+
+.menu-categories {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    height: 100dvh;
+    width: 200px;
+    border-radius: 0 25px 25px 0;
+    flex-flow: column;
+    gap: 10px;
+    background-color: white;
+
+    & button {
+        background: none;
+        border: none;
+        padding: 10px 40px;
+        font-size: 22px;
+        font-weight: 600;
+        font-family: sans-serif;
+        cursor: pointer;
+    }
+}
+
+.area-button-remove {
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+    justify-content: right;
+    margin-right: 40px;
+    margin-top: 20px;
 }
